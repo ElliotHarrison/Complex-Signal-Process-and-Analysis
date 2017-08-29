@@ -12,10 +12,10 @@ for k = 1 : length(snrdb)
 % Create and define upperbound of data analysis iterations and initialize diverse antenna modulation range.    
     for i = 1 : ct
         s = randsrc(1, 1, [-1 1]);
-        h1 = randn(1,1);
+        h1 = randn(1,1); % Create three channels (antenna's) for data passthrough.
         h2 = randn(1,1);
         h3 = randn(1,1);
-        n = randn(1,1)/sqrt(SNR);
+        n = randn(1,1)/sqrt(SNR); % Generate random AWGN noise.
         
 % Receive data observations on signal plus noise.
         y1 = h1 * s+ h2 * s + n;
@@ -37,7 +37,7 @@ for k = 1 : length(snrdb)
         end
     end
 
-    p1(k)= sum1/ct; % Plot transfer lifetime on semiology
+    p1(k)= sum1/ct; 
     p2(k) = sum2/ct;
 end
-semilogy(snrdb,p1,snrdb,p2)
+semilogy(snrdb,p1,snrdb,p2) % Plot transfer lifetime on semiology
