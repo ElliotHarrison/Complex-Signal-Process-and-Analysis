@@ -22,7 +22,7 @@ for k = 1 : length(snrdb)
         y2 = abs(h1) * s + abs(h2) * s + abs(h3) * s + n;
         
 % Detect data using prior estimates of observation output.
-        prio_est1 =y1/(h1+h2); % first step of detection 
+        prio_est1 = y1/(h1+h2); % first step of detection 
         prio_est2 = y2/(abs(h1)  + abs(h2) + abs(h3));
 
 % Refine the prior estimates, with a conditional check of datasum condition from input to output.            
